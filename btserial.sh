@@ -12,9 +12,9 @@ sed -e s/://g -i /etc/machine-info
 
 # Edit /lib/systemd/system/bluetooth.service to enable BT services
 sudo sed -i: 's|^Exec.*toothd$| \
-ExecStart=/usr/lib/bluetooth/bluetoothd -C \
+ExecStart=/usr/sbin/bluetoothd -C \
 ExecStartPost=/usr/bin/sdptool add SP \
-ExecStartPost=/bin/hciconfig hci0 piscan \
+ExecStartPost=/usr/bin/hciconfig hci0 piscan \
 |g' /lib/systemd/system/bluetooth.service
 
 # create /etc/systemd/system/rfcomm.service to enable 

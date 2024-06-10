@@ -16,3 +16,8 @@ $ cd rpi-headless-bt-access
 $ sudo sh install.sh
 ```
 
+## reboot
+```
+$ reboot
+```
+

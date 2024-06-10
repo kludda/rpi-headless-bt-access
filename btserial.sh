@@ -4,10 +4,11 @@
 #your unit from others in the Bluetooth console
 #(very useful in a class setting)
 
-
-
 echo -n PRETTY_HOSTNAME=rpi > /etc/machine-info
+# add mac adress to hostname to make it unique
 cat /sys/class/net/wlan0/address >> /etc/machine-info
+#remove : from hostname
+sed -e s/://g -i /etc/machine-info
 
 # Edit /lib/systemd/system/bluetooth.service to enable BT services
 sudo sed -i: 's|^Exec.*toothd$| \
